@@ -1,21 +1,34 @@
 <ion-app>
 
-  <ion-menu side="start" menuId="first" contentId="main">
-    <ion-header>
-      <ion-toolbar color="primary">
-        <ion-title>Start Menu</ion-title>
-      </ion-toolbar>
-    </ion-header>
-    <ion-content>
-      <ion-list>
-        <ion-item>Menu Item</ion-item>
-        <ion-item>Menu Item</ion-item>
-        <ion-item>Menu Item</ion-item>
-        <ion-item>Menu Item</ion-item>
-        <ion-item>Menu Item</ion-item>
-      </ion-list>
-    </ion-content>
-  </ion-menu>
 
-  <ion-router-outlet id="main"></ion-router-outlet>
+  <!-- Metimos todo el contenido dentro de ion-split-pane para mostrar el menu y el contenido cuando son pantallas grandes -->
+  <ion-split-pane when="md" contentId="main">
+
+    <ion-menu side="start" menuId="first" contentId="main">
+      <ion-header>
+        <ion-toolbar color="primary">
+          <ion-title>Menu</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content>
+        <ion-list>
+  
+          <!-- Sirve para ocultar el menu cuando alguien lo toque, el ng for lo tenia en el item pero como lo meti en el menu tuve que subir el ngfor al menu-toggle -->
+          <!-- autoHide="false" para que se muestre el menu cuando las pantallas son grandes -->
+          <ion-menu-toggle *ngFor="let componente of componentes | async" autoHide="false">
+            <!-- Detail es para que aparesca la flechita de se puede tocar o navegar -->
+            <ion-item [routerLink]="componente.redirectTo" detail >
+              <ion-icon [name]="componente.icon" slot="start" color="primary"></ion-icon>
+              {{componente.name}}
+            </ion-item>
+          </ion-menu-toggle>
+  
+        </ion-list>
+      </ion-content>
+    </ion-menu>
+  
+    <ion-router-outlet id="main"></ion-router-outlet>
+  </ion-split-pane>
+
+  
 </ion-app>
