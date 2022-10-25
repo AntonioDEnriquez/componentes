@@ -1,0 +1,17 @@
+<app-header Titulo="Alert"></app-header>
+<ion-content class="ion-padding">
+  <ion-button routerLink="/inicio">Inicio</ion-button>
+  <ion-button routerLink="/action-sheet">Action Sheet</ion-button>
+
+  <ion-button (click)="presentAlert()" expand="block">
+    Click me
+  </ion-button>
+
+  <ion-button (click)="presentAlert2()">Click Me</ion-button>
+  <p>{{ handlerMessage }}</p>
+  <p>{{ roleMessage }}</p>
+
+  <ion-button (click)="presentAlertPromp()">Present Alert Promp</ion-button>
+
+
+</ion-content>

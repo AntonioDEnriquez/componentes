@@ -1,0 +1,27 @@
+<app-header Titulo="Grid"></app-header>
+
+<ion-content>
+  <!-- El fixed es para que el grid tenga un tamaño fijo basado en el tamaño de la pantalla -->
+<ion-grid fixed="">
+  <ion-row>
+    <!-- size="12" tamaño normal, sizeLg="3" tamaño de pantalla grande sizeMd="4" medianas, sizeSm="6" pequeñas-->
+    <ion-col  size="12" sizeLg="3" sizeMd="4" sizeSm="6"
+              *ngFor="let item of [1,1,1,1,1,1,1,1,1,1,1,1]">
+
+      <ion-card>
+        <ion-img src="/assets/img/stan-lee.jpg"></ion-img>
+      </ion-card>
+
+      <ion-card-header>
+        <ion-card-subtitle>Awesome Subtitle</ion-card-subtitle>
+        <ion-card-title>Awesome Title</ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi vel nemo deleniti atque ullam reprehenderit placeat porro laborum magni corporis similique animi quas, adipisci ad modi ex quidem incidunt eaque!
+      </ion-card-content>
+
+    </ion-col>
+  </ion-row>
+</ion-grid>
+</ion-content>

@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+<ion-buttons slot="start">
+  <ion-menu-button menu="first" color="primary"></ion-menu-button>
+</ion-buttons>
+
+    <!-- <ion-buttons slot="start">
+      <ion-button (click)="mostrarMenu()">
+        <ion-icon slot="start" name="menu-outline" color="primary"></ion-icon>
+      </ion-button>
+    </ion-buttons> -->
+
+    <ion-title color="primary">Componentes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <!-- Detail es para que aparesca la flechita de se puede tocar o navegar -->
+    <ion-item *ngFor="let componente of componentes | async" [routerLink]="componente.redirectTo" detail>
+      <ion-icon [name]="componente.icon" slot="start" color="primary"></ion-icon>
+      {{componente.name}}
+    </ion-item>
+  </ion-list>
+  <!-- <ion-button routerLink="/alert">Alert</ion-button>
+  <ion-button routerLink="/action-sheet">Action Sheet</ion-button> -->
+
+</ion-content>

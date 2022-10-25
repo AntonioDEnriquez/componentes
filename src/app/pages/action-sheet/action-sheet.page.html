@@ -1,0 +1,23 @@
+<!-- <ion-header>
+  <ion-toolbar> -->
+
+    <!-- Boton para regresar a la pantalla anterior, el slot es para indicarle donde estara posicionado el boton -->
+    <!-- <ion-buttons slot="start"> -->
+      <!-- Si no existen paginas anteriores, entonces a la pagina a la cual va a regresar es al inicio -->
+      <!-- <ion-back-button defaultHref="/" text="Regresar" color="primary" mode="ios"></ion-back-button> -->
+    <!-- </ion-buttons> -->
+
+    <!-- <ion-title>Action-sheet</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<app-header Titulo="action Sheet"></app-header>
+
+<ion-content>
+  <ion-button routerLink="/inicio">Inicio</ion-button>
+  <ion-button routerLink="/alert">Alert</ion-button>
+
+  <ion-button class="ion-padding" expand="block" (click)="onClick()">
+    Mostrar Action Sheet
+  </ion-button>
+</ion-content>
